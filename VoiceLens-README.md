@@ -123,9 +123,8 @@ from HTML (instead of plain jsPDF text) means non-Latin scripts such as Hindi, A
 
 ### GitHub Pages (static frontend)
 
-The repository includes a GitHub Actions workflow at `.github/workflows/pages.yml`. It publishes `VoiceLens.html` as the
-required `index.html` on every push to `main` or `master`. In GitHub, open **Settings → Pages**, choose **GitHub Actions**
-as the build and deployment source, then push to the repository. GitHub Pages serves the browser UI over HTTPS, so camera
+The repository root includes `index.html`, which GitHub Pages requires for the project home page. Configure **Settings →
+Pages** to publish the `main` branch from the `/ (root)` folder. GitHub Pages serves the browser UI over HTTPS, so camera
 and microphone permissions can work. Pages does not run the Flask server: the `/api/health` and `/api/transcribe` endpoints
 for hosted Whisper require deploying the Python service separately. Browser speech recognition and Read Aloud remain
 browser-dependent; translation requires a configured AI endpoint that allows requests from the Pages domain.
